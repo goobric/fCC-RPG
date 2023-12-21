@@ -57,8 +57,9 @@ function update(location) {
   button2.onclick = location['button functions'][1];
   // button3.onclick = fightDragon;
   button3.onclick = location['button functions'][2];
-  text.innerText =
-    'You are in the town square. You see a sign that says "Store"';
+  // text.innerText =
+  // ('You are in the town square. You see a sign that says "Store"');
+  text.innerText = location.text;
 }
 
 function goTown() {
@@ -74,10 +75,17 @@ function goStore() {
   button2.onclick = buyWeapon;
   button3.onclick = goTown;
   text.innerText = 'You enter the store.'; */
+  update(locations[1]);
 }
 function goCave() {
   console.log('Going to cave.');
 }
 function fightDragon() {
   console.log('Fighting Dragon.');
+}
+function fightSlime() {
+  console.log('Fighting Slime.');
+}
+function fightBeast() {
+  console.log('Fighting Beast.');
 }
