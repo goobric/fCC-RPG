@@ -28,6 +28,13 @@ button3.onclick = fightDragon;
 // Define the goStore function (replace this with your actual function)
 function goStore() {
   console.log('Going to store.');
+  button1.innerHTML = 'Buy 10 health (10 gold)';
+  button2.innerText = 'Buy weapon (30 gold)';
+  button3.innerText = 'Go to town square';
+  button1.onclick = buyHealth;
+  button2.onclick = buyWeapon;
+  button3.onclick = goTown;
+  text.innerText = 'You enter the store.';
 }
 function goCave() {
   console.log('Going to cave.');
