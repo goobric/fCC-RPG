@@ -43,30 +43,37 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
-function update(location) {}
-
-function goTown() {
+function update(location) {
   console.log('Going to town.');
-  button1.innerText = 'Go to store';
-  button2.innerText = 'Go to cave';
-  button3.innerText = 'Fight dragon';
-  button1.onclick = goStore;
-  button2.onclick = goCave;
-  button3.onclick = fightDragon;
+  // button1.innerText = 'Go to store';
+  button1.innerText = location['button text'][0];
+  // button2.innerText = 'Go to cave';
+  button2.innerText = location['button text'][1];
+  // button3.innerText = 'Fight dragon';
+  button3.innerText = location['button text'][2];
+  // button1.onclick = goStore;
+  button1.onclick = location['button functions'][0];
+  // button2.onclick = goCave;
+  button2.onclick = location['button functions'][1];
+  // button3.onclick = fightDragon;
+  button3.onclick = location['button functions'][2];
   text.innerText =
     'You are in the town square. You see a sign that says "Store"';
-  fu;
+}
+
+function goTown() {
+  update(locations[0]);
 }
 // Define the goStore function (replace this with your actual function)
 function goStore() {
-  console.log('Going to store.');
+  /* console.log('Going to store.');
   button1.innerHTML = 'Buy 10 health (10 gold)';
   button2.innerText = 'Buy weapon (30 gold)';
   button3.innerText = 'Go to town square';
   button1.onclick = buyHealth;
   button2.onclick = buyWeapon;
   button3.onclick = goTown;
-  text.innerText = 'You enter the store.';
+  text.innerText = 'You enter the store.'; */
 }
 function goCave() {
   console.log('Going to cave.');
