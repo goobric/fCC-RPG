@@ -172,3 +172,17 @@ function fightBeast() {
   fighting = monsters[1];
   goFight();
 }
+
+function goFight() {
+  monsterName.innerText = fighting.name;
+  monsterHealth = fighting.health;
+  monsterHealthText.innerText = 'Health: ' + monsterHealth;
+  monsterStats.style.display = 'block';
+  text.innerText = 'You are fighting a ' + fighting.name + '.';
+  button1.innerText = 'Attack';
+  button2.innerText = 'Run';
+  button3.innerText = 'Use potion';
+  button1.onclick = attack;
+  button2.onclick = run;
+  button3.onclick = usePotion;
+}
