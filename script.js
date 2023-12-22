@@ -186,3 +186,7 @@ function goFight() {
   button2.onclick = run;
   button3.onclick = usePotion;
 }
+
+function attack() {}
+
+function dodge() {}
