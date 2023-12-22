@@ -219,3 +219,19 @@ function attack() {
 }
 
 function dodge() {}
+
+function defeatMonster() {
+  text.innerText = 'You defeated the ' + monsters[fighting].name + '!';
+  xp += monsters[fighting].level * 15;
+  gold += monsters[fighting].level * 10;
+  updateStats();
+  monsterStats.style.display = 'none';
+  goTown();
+}
+
+function lose() {
+  text.innerText = 'You died!';
+  button1.style.display = 'none';
+  button2.style.display = 'none';
+  button3.style.display = 'none';
+}
