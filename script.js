@@ -285,11 +285,11 @@ function restart() {
   health = 100;
   gold = 50;
   currentWeapon = 0;
-  // updateStats();
-  // button1.style.display = 'block';
-  // button2.style.display = 'block';
-  // button3.style.display = 'block';
-  // update(locations[0]);
+  updateStats();
+  button1.style.display = 'block';
+  button2.style.display = 'block';
+  button3.style.display = 'block';
+  update(locations[0]);
   goldText.innerText = 'Gold: ' + gold;
   xpText.innerText = 'XP: ' + xp;
   healthText.innerText = 'Health: ' + health;
