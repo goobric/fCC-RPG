@@ -183,6 +183,8 @@ function goFight() {
   update(locations[3]);
   monsterHealth = monsters[fighting].health;
   monsterStats.style.display = 'block';
+  monsterName.innerText = monsters[fighting].name;
+  monsterHealthText.innerText = 'Health: ' + monsterHealth;
   /* monsterName.innerText = fighting.name;
   monsterHealth = fighting.health;
   monsterHealthText.innerText = 'Health: ' + monsterHealth;
@@ -196,6 +198,24 @@ function goFight() {
   button3.onclick = usePotion; */
 }
 
-function attack() {}
+function attack() {
+  text.innerText = 'The ' + monsters[fighting].name + ' attacks you!';
+  text.innerText +=
+    ' You attack the ' +
+    monsters[fighting].name +
+    ' with your ' +
+    weapons[currentWeapon].name +
+    '!';
+  health -= monsters[fighting].level * weapons[currentWeapon].power;
+  monsterHealth -=
+    weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+  healthText.innerText = 'Health: ' + health;
+  monsterHealthText.innerText = 'Health: ' + monsterHealth;
+  if (health <= 0) {
+    lose();
+  } else if (monsterHealth <= 0) {
+    defeatMonster();
+  }
+}
 
 function dodge() {}
