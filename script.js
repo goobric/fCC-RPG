@@ -104,7 +104,9 @@ function goCave() {
   update(locations[2]);
 }
 function fightDragon() {
-  console.log('Fighting Dragon.');
+  // console.log('Fighting Dragon.');
+  fighting = monsters[2];
+  goFight();
 }
 
 function buyHealth() {
@@ -161,8 +163,12 @@ function sellWeapon() {
 }
 
 function fightSlime() {
-  console.log('Fighting Slime.');
+  // console.log('Fighting Slime.');
+  fighting = monsters[0];
+  goFight();
 }
 function fightBeast() {
-  console.log('Fighting Beast.');
+  // console.log('Fighting Beast.');
+  fighting = monsters[1];
+  goFight();
 }
