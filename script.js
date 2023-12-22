@@ -253,7 +253,10 @@ function attack() {
 }
 
 function getMonsterAttackValue(level) {
-  return level * weapons[currentWeapon].power;
+  // return level * weapons[currentWeapon].power;
+  const hit = level * 5 - Math.floor(Math.random() * xp);
+  console.log('Monster hit:', hit);
+  return hit > 0 ? hit : 0;
 }
 
 function dodge() {
