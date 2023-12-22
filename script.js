@@ -115,15 +115,21 @@ function buyHealth() {
 
 function buyWeapon() {
   // console.log('Buying weapon.');
-  if (gold >= 30) {
-    gold -= 30;
-    currentWeapon++;
-    updateStats();
-    goldText.innerText = 'Gold: ' + gold;
-    let newWeapon = weapons[currentWeapon].name;
-    text.innerText = 'You bought a ' + newWeapon + '.';
-    inventory.push(newWeapon);
-    text.innerText += ' You now have ' + inventory;
+  if (currentWeapon < weapons.length - 1) {
+    if (gold >= 30) {
+      gold -= 30;
+      currentWeapon++;
+      updateStats();
+      goldText.innerText = 'Gold: ' + gold;
+      let newWeapon = weapons[currentWeapon].name;
+      text.innerText = 'You bought a ' + newWeapon + '.';
+      inventory.push(newWeapon);
+      text.innerText += ' You now have ' + inventory;
+    } else {
+      text.innerText = 'You do not have enough gold to buy a weapon.';
+    }
+  } else {
+    text.innerText = 'You already have the most powerful weapon!';
   }
 }
 
