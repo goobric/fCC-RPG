@@ -27,6 +27,12 @@ const weapons = [
   { name: 'sword', power: 20 },
 ];
 
+const monsters = [
+  { name: 'slime', level: 2, health: 15 },
+  { name: 'fanged beast', level: 8, health: 60 },
+  { name: 'dragon', level: 20, health: 300 },
+];
+
 const locations = [
   {
     name: 'town square',
@@ -136,7 +142,22 @@ function buyWeapon() {
 }
 
 function sellWeapon() {
-  console.log('Selling weapon.');
+  // console.log('Selling weapon.');
+  if (inventory.length > 1) {
+    gold += 15;
+    // inventory.pop();
+    updateStats();
+    goldText.innerText = 'Gold: ' + gold;
+    text.innerText = 'You sold your ' + inventory + '.';
+    // Use shift() to get the first element from the inventory array
+    let currentWeapon = inventory.shift();
+    // Now, currentWeapon holds the value of the removed element
+    console.log('Sold weapon:', currentWeapon);
+    text.innerText = 'You sold your ' + currentWeapon + '.';
+    text.innerText += ' In your inventory you now have ' + inventory;
+  } else {
+    text.innerText = 'Do not sell your only weapon!';
+  }
 }
 
 function fightSlime() {
