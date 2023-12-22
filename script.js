@@ -110,6 +110,8 @@ function buyHealth() {
     healthText.innerText = 'Health: ' + health;
   } else {
     text.innerText = 'You do not have enough gold to buy health.';
+    button2.innerText = 'Sell weapon for 15 gold nuggets';
+    button2.onclick = sellWeapon;
   }
 }
 
@@ -131,6 +133,10 @@ function buyWeapon() {
   } else {
     text.innerText = 'You already have the most powerful weapon!';
   }
+}
+
+function sellWeapon() {
+  console.log('Selling weapon.');
 }
 
 function fightSlime() {
