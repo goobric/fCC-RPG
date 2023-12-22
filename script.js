@@ -123,6 +123,7 @@ function buyWeapon() {
     let newWeapon = weapons[currentWeapon].name;
     text.innerText = 'You bought a ' + newWeapon + '.';
     inventory.push(newWeapon);
+    text.innerText += ' You now have ' + inventory;
   }
 }
 
