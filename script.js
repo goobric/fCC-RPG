@@ -112,7 +112,15 @@ function buyHealth() {
 }
 
 function buyWeapon() {
-  console.log('Buying weapon.');
+  // console.log('Buying weapon.');
+  if (gold >= 30) {
+    gold -= 30;
+    currentWeapon++;
+    updateStats();
+    goldText.innerText = 'Gold: ' + gold;
+    let newWeapon = weapons[currentWeapon];
+    text.innerText = 'You bought a ' + weapons[currentWeapon].name + '.';
+  }
 }
 
 function fightSlime() {
