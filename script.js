@@ -231,7 +231,17 @@ function attack() {
   if (health <= 0) {
     lose();
   } else if (monsterHealth <= 0) {
-    defeatMonster();
+    if (fighting === monsters[2]) {
+      text.innerText = 'You defeated the dragon! You win!';
+      button1.style.display = 'none';
+      button2.style.display = 'none';
+      button3.style.display = 'none';
+      winGame();
+    } else {
+      defeatMonster();
+    }
+    // ternary operator
+    // fighting === monsters[2] ? winGame() : defeatMonster();
   }
 }
 
@@ -265,11 +275,11 @@ function restart() {
   health = 100;
   gold = 50;
   currentWeapon = 0;
-  updateStats();
-  button1.style.display = 'block';
-  button2.style.display = 'block';
-  button3.style.display = 'block';
-  update(locations[0]);
+  // updateStats();
+  // button1.style.display = 'block';
+  // button2.style.display = 'block';
+  // button3.style.display = 'block';
+  // update(locations[0]);
   goldText.innerText = 'Gold: ' + gold;
   xpText.innerText = 'XP: ' + xp;
   healthText.innerText = 'Health: ' + health;
