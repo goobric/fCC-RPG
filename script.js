@@ -229,7 +229,8 @@ function attack() {
     ' with your ' +
     weapons[currentWeapon].name +
     '!';
-  health -= monsters[fighting].level * weapons[currentWeapon].power;
+  // health -= monsters[fighting].level * weapons[currentWeapon].power;
+  health -= getMonsterAttackValue(monsters[fighting].level);
   monsterHealth -=
     weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
   healthText.innerText = 'Health: ' + health;
@@ -249,6 +250,10 @@ function attack() {
     // ternary operator
     // fighting === monsters[2] ? winGame() : defeatMonster();
   }
+}
+
+function getMonsterAttackValue(level) {
+  return level * weapons[currentWeapon].power;
 }
 
 function dodge() {
