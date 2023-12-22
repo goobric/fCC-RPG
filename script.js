@@ -97,9 +97,13 @@ function buyHealth() {
     health += 10;
     updateStats();
   }
+  goldText.innerText = 'Gold: ' + gold;
+  healthText.innerText = 'Health: ' + health;
 }
 
-function buyWeapon() {}
+function buyWeapon() {
+  console.log('Buying weapon.');
+}
 
 function fightSlime() {
   console.log('Fighting Slime.');
