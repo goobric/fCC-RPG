@@ -84,11 +84,23 @@ function goStore() {
   update(locations[1]);
 }
 function goCave() {
-  console.log('Going to cave.');
+  // console.log('Going to cave.');
+  update(locations[2]);
 }
 function fightDragon() {
   console.log('Fighting Dragon.');
 }
+
+function buyHealth() {
+  if (gold >= 10) {
+    gold -= 10;
+    health += 10;
+    updateStats();
+  }
+}
+
+function buyWeapon() {}
+
 function fightSlime() {
   console.log('Fighting Slime.');
 }
