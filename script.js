@@ -96,9 +96,11 @@ function buyHealth() {
     gold -= 10;
     health += 10;
     updateStats();
+    goldText.innerText = 'Gold: ' + gold;
+    healthText.innerText = 'Health: ' + health;
+  } else {
+    text.innerText = 'You do not have enough gold to buy health.';
   }
-  goldText.innerText = 'Gold: ' + gold;
-  healthText.innerText = 'Health: ' + health;
 }
 
 function buyWeapon() {
