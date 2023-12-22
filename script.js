@@ -180,7 +180,10 @@ function fightBeast() {
 }
 
 function goFight() {
-  monsterName.innerText = fighting.name;
+  update(locations[3]);
+  monsterHealth = monsters[fighting].health;
+  monsterStats.style.display = 'block';
+  /* monsterName.innerText = fighting.name;
   monsterHealth = fighting.health;
   monsterHealthText.innerText = 'Health: ' + monsterHealth;
   monsterStats.style.display = 'block';
@@ -190,7 +193,7 @@ function goFight() {
   button3.innerText = 'Use potion';
   button1.onclick = attack;
   button2.onclick = run;
-  button3.onclick = usePotion;
+  button3.onclick = usePotion; */
 }
 
 function attack() {}
