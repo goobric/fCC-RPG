@@ -5,6 +5,8 @@ var currentWeapon = 0;
 let fighting;
 let monsterHealth;
 let inventory = ['stick', 'dagger', 'sword'];
+// let newWeapon = weapons[currentWeapon].name;
+// New Inventory from weapons array using push method
 
 const button1 = document.querySelector('#button1');
 const button2 = document.querySelector('#button2');
@@ -118,8 +120,9 @@ function buyWeapon() {
     currentWeapon++;
     updateStats();
     goldText.innerText = 'Gold: ' + gold;
-    let newWeapon = weapons[currentWeapon];
-    text.innerText = 'You bought a ' + weapons[currentWeapon].name + '.';
+    let newWeapon = weapons[currentWeapon].name;
+    text.innerText = 'You bought a ' + newWeapon + '.';
+    inventory.push(newWeapon);
   }
 }
 
