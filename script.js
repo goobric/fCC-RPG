@@ -255,6 +255,10 @@ function attack() {
     // ternary operator
     // fighting === monsters[2] ? winGame() : defeatMonster();
   }
+  if (Math.random() <= 0.1) {
+    // text.innerText += 'Your ' + weapons[currentWeapon].name + ' broke!';
+    text.innerText += ' Your ' + inventory.pop() + ' broke!';
+  }
 }
 
 function getMonsterAttackValue(level) {
@@ -265,7 +269,7 @@ function getMonsterAttackValue(level) {
 }
 
 function isMonsterHit() {
-  return Math.random() > 0.2;
+  return Math.random() > 0.2 || health < 20;
 }
 
 function dodge() {
