@@ -255,7 +255,7 @@ function attack() {
     // ternary operator
     // fighting === monsters[2] ? winGame() : defeatMonster();
   }
-  if (Math.random() <= 0.1) {
+  if (Math.random() <= 0.1 && inventory.length !== 1) {
     // text.innerText += 'Your ' + weapons[currentWeapon].name + ' broke!';
     text.innerText += ' Your ' + inventory.pop() + ' broke!';
   }
@@ -315,4 +315,9 @@ function restart() {
   xpText.innerText = 'XP: ' + xp;
   healthText.innerText = 'Health: ' + health;
   goTown();
+}
+
+// small easter egg for the game
+function easterEgg() {
+  update(locations[7]);
 }
