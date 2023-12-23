@@ -84,6 +84,12 @@ const locations = [
     'button functions': [restart, restart, restart],
     text: 'You defeat the dragon! YOU WIN THE GAME! 🎉',
   },
+  {
+    name: 'easter egg',
+    'button text': ['2', '8', 'Go to town square?'],
+    'button functions': [pickTwo, pickEight, goTown],
+    text: 'You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!',
+  },
 ];
 
 // initialize buttons
@@ -329,4 +335,64 @@ function pickEight() {
   pick(8);
 }
 
-function pick(guess) {}
+function pick(guess) {
+  let numbers = [];
+  while (numbers.length < 10) {
+    numbers.push(Math.floor(Math.random() * 11));
+    if (!numbers.includes(number)) {
+      numbers.push(number);
+    }
+  }
+  text.innerText = 'You picked ' + guess + '. Here are the numbers: ' + numbers;
+  for (let i = 0; i < numbers.length; i++) {
+    text.innerText += ' ' + numbers[i] + '\n';
+  }
+  if (numbers.indexOf(guess) !== -1) {
+    text.innerText += 'Right! You win 20 gold nuggets!';
+    gold += 20;
+    goldText.innerText = 'Gold: ' + gold;
+  } else {
+    text.innerText += 'Wrong! You lose 10 gold nuggets!';
+    health -= 10;
+    healthText.innerText = 'Health: ' + health;
+  }
+  if (health <= 0) {
+    lose();
+  }
+}
+
+/** 
+for loops are declared with three expressions separated by semicolons. for (a; b; c), where a is the initialization expression, b is the condition, and c is the final expression.
+The initialization expression is executed only once, before the loop starts, and is often used to define and set up the loop variable. Think of it like declaring a counter to use in your loop.
+Many for loops use i as the counter and start from 0, so change let x = 1; to let i = 0;.
+ */
+
+/** function pick(guess) {
+  let numbers = [];
+  while (numbers.length < 10) {
+    let number = Math.floor(Math.random() * 11);
+    if (!numbers.includes(number)) {
+      numbers.push(number);
+    }
+  }
+} */
+
+/* function pick(guess) {
+  let numbers = [];
+  while (numbers.length < 10) {
+    // Generate a random number and push it to the end of the numbers array
+    const randomNumber = Math.floor(Math.random() * 100); // Adjust the range as needed
+    numbers.push(randomNumber);
+  }
+
+  // Rest of your code...
+}
+*/
+/* function pick(guess) {
+  let numbers = [];
+  while (numbers.length < 10) {
+    numbers.push(Math.floor(Math.random() * 11));
+  }
+  // Rest of your code...
+}
+*/
